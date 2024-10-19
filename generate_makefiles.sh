@@ -3,11 +3,11 @@
 # Loop through all subdirectories
 for dir in */; do
     # Check if Makefile already exists in the subdirectory
-    if [ ! -f "${dir}Makefile" ]; then
+    if [ ! -f "${dir}/Makefile" ]; then
         echo "Creating Makefile in $dir"
         
         # Create the Makefile in the subdirectory
-        cat > "${dir}Makefile" <<EOL
+        cat > "${dir}/Makefile" <<EOL
 # Compiler
 CC = gcc
 
@@ -15,10 +15,10 @@ CC = gcc
 CFLAGS = -Wall -g
 
 # Target executable (same name as subdirectory)
-TARGET = $(basename ${dir})
+TARGET = \$(basename ${dir%/})
 
 # List of source files in this directory
-SRCS = \$(wildcard *.c)
+SRCS = \$(wildcard ${dir}*.c)
 
 # Object files
 OBJS = \$(SRCS:.c=.o)

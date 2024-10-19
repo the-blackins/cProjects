@@ -1,0 +1,24 @@
+{
+    "configurations": [
+      {
+        "name": "Win32",
+        "includePath": [
+          "${workspaceFolder}/**",
+          "C:/curl/curl-8.10.1_6-win64-mingw/include",
+          "C:/curl/curl-8.10.1_6-win64-mingw/include/openssl"
+        ],
+        "defines": [
+          "_DEBUG",
+          "UNICODE",
+          "_UNICODE"
+        ],
+        "windowsSdkVersion": "10.0.19041.0", // Adjust based on your SDK version if necessary
+        "compilerPath": "C:/mingw/bin/gcc.exe", // Set to your compiler path
+        "cStandard": "c11",
+        "cppStandard": "c++17",
+        "intelliSenseMode": "gcc-x64"
+      }
+    ],
+    "version": 4
+  }
+  

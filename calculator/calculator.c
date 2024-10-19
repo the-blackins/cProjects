@@ -35,6 +35,7 @@ int main() {
         printf("Input number: ");
         scanf("%lf", &numN);
         
+
         switch (oper) {
             case '+':
                 result = add(num1, numN);
@@ -60,10 +61,19 @@ int main() {
                 printf("Error: Invalid operator. Please use +, -, *, or /.\n");
                 break;
         }
+
+        printf("do you want the operation to be a complex one? ");
+        
+
         
         printf("Continue operation [yes = 1 / no = 0]: ");
         scanf("%d", &commence);
+        
+        
+
+        printf("%lf\n", result);
     }
 
     printf("Exiting the operation. Goodbye!\n");
     return 0;
+}
