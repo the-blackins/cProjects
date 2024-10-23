@@ -17,8 +17,7 @@ double divide(double a, double b) {
 }
 
 int main() {
-    int commence;
-
+    int commence, complex;
     printf("Begin operation [yes = 1 / no = 0]: ");
     scanf("%d", &commence);
  
@@ -34,6 +33,9 @@ int main() {
         
         printf("Input number: ");
         scanf("%lf", &numN);
+        
+complex_calculation_begin:
+
         
 
         switch (oper) {
@@ -62,16 +64,45 @@ int main() {
                 break;
         }
 
-        printf("do you want the operation to be a complex one? ");
+        printf("do you want the operation to be a continous one?  [yes = 1 / no = 0]: ");
+        scanf( "%d", &complex);
+
+        // numN = result;
+        if (complex ==0)
+        {
+           printf("Continue operation [yes = 1 / no = 0]: ");
+           scanf("%d", &commence); 
+        }
+        else if (complex)
+        {
+            num1 = result;
+
+            printf("Choose your operator: - + * / : ");
+            scanf(" %c", &oper);  
+
+            printf("Input next number: ");
+            scanf("%lf", &numN);
+
+            printf("%.2lf  %c  %.2lf  ", num1, oper, numN);
+
+            goto complex_calculation_begin;
+
+        }
+        else
+        {
+            printf("invalid input");
+        }
+        
+        
         
 
+
         
-        printf("Continue operation [yes = 1 / no = 0]: ");
-        scanf("%d", &commence);
+        
         
         
 
-        printf("%lf\n", result);
+        printf("Final result: %.2lf\n", result);
     }
 
     printf("Exiting the operation. Goodbye!\n");
