@@ -1,11 +1,7 @@
 # Compiler
 CC = gcc
-
-# Compiler flags with include paths for cURL and OpenSSL
-CFLAGS = -Wall -g -IC:/curl/curl-8.10.1_6-win64-mingw/include -IC:/curl/curl-8.10.1_6-win64-mingw/include/openssl
-
-
-
+CFLAGS = -Wall -g
+LIBS = -lcurl -lssl -lcrypto
 
 # Target executable (same name as subdirectory)
 TARGET = https
@@ -21,7 +17,7 @@ all: $(TARGET)
 
 # Build the executable
 $(TARGET): $(OBJS)
-	$(CC) $(OBJS) -o $(TARGET) -LC:/curl/curl-8.10.1_6-win64-mingw/lib -lcurl -lssl -lcrypto
+	$(CC) $(OBJS) -o $(TARGET) $(LIBS)
 
 # Compile .c files into .o files
 %.o: %.c
